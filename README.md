@@ -1,6 +1,6 @@
 ### PinDrop GSD
 
-1. Requirements :
+Requirements :
 * Python 2.7
 * pip 8.1.2
 * pip install virtualenv (To avoid dependency issues with existing packages)
@@ -24,13 +24,14 @@ python schedule.py
 This script will store the performance metrics in the Redis database every minute with the timestamp(date and time in the format of %d/%m/%Y %H:%M) as the key and performance metrics as the value. These can be then retreived from the database using API endpoints.
 It will also store the performance metrics with date as the key and hour as the score in a sorted set. This is used to retrieve all the metrics of a particular date in sorted order.
 It also stores the average metrics in the database every hour. This is used for calculating the average of the day.
-
-
+This can be stopped by ctrl+c.
 
 3. Run app.py
 ```
-This will start my application which is at localhost:5000. This can be used to retrieve metrics at various points in time.
+python app.py
 ```
+This will start my application which is at localhost:5000. This can be used to retrieve metrics at various points in time.
+
 #### Explanation
 
 I am used Redis which is "NoSQL" key-value data store as my database as it provides fast storage, retrieval and on disk persistence.
