@@ -113,7 +113,7 @@ def get_past_memory():
     if(past_data is None):
         return jsonify(None)
     past_data = json.loads(past_data)
-    return jsonify(v['memory'])
+    return jsonify(past_data['memory'])
 
 @app.route('/disk_usage/past-metrics')
 def get_past_disk_usage():
@@ -122,7 +122,7 @@ def get_past_disk_usage():
     if(past_data is None):
         return jsonify(None)
     past_data = json.loads(past_data)
-    return jsonify(v['disk_usage'])
+    return jsonify(past_data['disk_usage'])
 
 @app.route('/network_usage/past-metrics')
 def get_past_network_usage():
@@ -131,7 +131,7 @@ def get_past_network_usage():
     if(past_data is None):
         return jsonify(None)
     past_data = json.loads(past_data)
-    return jsonify(v['network_usage'])
+    return jsonify(past_data['network_usage'])
 
 if __name__ == '__main__':
     if(redis_connection is None):
